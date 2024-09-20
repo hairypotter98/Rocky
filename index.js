@@ -36,8 +36,8 @@ function getHumanChoice(){
 
 /*Create two new variables named humanScore and computerScore in the global scope.*/
 
-const humanScore=0;
-const computerScore=0;
+let humanScore=0;
+let computerScore=0;
 
 /*Create a new function named playRound.
 Define two parameters for playRound: humanChoice and computerChoice. 
@@ -50,18 +50,24 @@ function playRound(humanChoice,computerChoice){
 
     if(humanChoice == "rock" && computerChoice == "scissors"){
         console.log("You won! Rock beats Scissors")
+        humanScore++
     }else if (humanChoice == "scissors" && computerChoice == "rock"){
         console.log("You lose! Rock beats Scissors")
+        computerScore++
     }else if(humanChoice == "paper" && computerChoice == "rock"){
         console.log("You won! Paper beats Rock")
+        humanScore++
     }else if(humanChoice == "rock" && computerChoice == "paper"){
         console.log("You lose! Paper beats Rock")
+        computerScore++
     }else if(humanChoice == "scissors" && computerChoice == "paper"){
         console.log("You won! Scissors beats Paper")
+        humanScore++
     }else if(humanChoice == "paper" && computerChoice == "scissors"){
         console.log("You lose! Scissors beats Paper")
+        computerScore++
     }else if(humanChoice === computerChoice){
-        console.log("We both picked the same thing")
+        console.log("We both picked the same thing, It's a draw")
     }else {
         console.log("Invalid choice")
         prompt("The value that you entered was neither rock, paper or scissor, try entering a different value");
@@ -69,7 +75,9 @@ function playRound(humanChoice,computerChoice){
     }
 }
 
-playRound(getHumanChoice(),GetComputerChoice());
+const humanSelection = getHumanChoice();
+const computerSelection = GetComputerChoice();
 
+playRound(humanSelection, computerSelection);
 
 
