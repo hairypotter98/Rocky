@@ -38,6 +38,12 @@ function getHumanChoice(){
 
 let humanScore=0;
 let computerScore=0;
+    
+
+
+/*Create a new function named playGame.*/
+
+function playGame(){
 
 /*Create a new function named playRound.
 Define two parameters for playRound: humanChoice and computerChoice. 
@@ -79,5 +85,25 @@ const humanSelection = getHumanChoice();
 const computerSelection = GetComputerChoice();
 
 playRound(humanSelection, computerSelection);
+console.log("Your score="+humanScore);
+console.log("My score="+computerScore);
 
+
+}
+
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
+
+if (humanScore>computerScore){
+    alert("You win");
+}
+else if(humanScore===computerScore){
+    alert("It's a draw");
+}
+else{
+    alert("You lose");
+}
 
